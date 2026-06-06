@@ -18,10 +18,11 @@ jobs:
         
     - name: Build Exe
       run: |
+        cd LedgerPro
         pyinstaller --clean --onefile --noconsole --collect-all customtkinter --collect-all matplotlib main.py
         
     - name: Save Artifact
       uses: actions/upload-artifact@v4
       with:
         name: LedgerPro-Windows
-        path: dist/main.exe
+        path: LedgerPro/dist/main.exe
